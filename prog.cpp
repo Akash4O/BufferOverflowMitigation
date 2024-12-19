@@ -89,38 +89,56 @@ int main() {
 
     switch (choice) {
         case 1: {
-            int unsafeInt = 999;
-            cout << "\nDemonstrating Unsafe Function for Integer:" << endl;
-            unsafeFunctionInt(unsafeInt);
-
-            int safeInt = 1;
-            cout << "\nDemonstrating Safe Function for Integer:" << endl;
-            safeFunctionInt(safeInt);
+            cout << "Do you want to run the safe or unsafe function? (1 for unsafe, 2 for safe): ";
+            int subChoice;
+            cin >> subChoice;
+            if (subChoice == 1) {
+                int unsafeInt = 999;
+                cout << "\nDemonstrating Unsafe Function for Integer:" << endl;
+                unsafeFunctionInt(unsafeInt);
+            } else if (subChoice == 2) {
+                int safeInt = 1;
+                cout << "\nDemonstrating Safe Function for Integer:" << endl;
+                safeFunctionInt(safeInt);
+            } else {
+                cout << "Invalid choice." << endl;
+            }
             break;
         }
         case 2: {
-            const char *unsafeInput = "ThisIsAVeryLongInputThatWillOverflow";
-            const string safeInput = "SafeInput";
-
-            cout << "\nDemonstrating Unsafe Function for String:" << endl;
-            unsafeFunctionString(unsafeInput);
-
-            cout << "\nDemonstrating Safe Function for String:" << endl;
-            safeFunctionString(safeInput);
+            cout << "Do you want to run the safe or unsafe function? (1 for unsafe, 2 for safe): ";
+            int subChoice;
+            cin >> subChoice;
+            if (subChoice == 1) {
+                const char *unsafeInput = "ThisIsAVeryLongInputThatWillOverflow";
+                cout << "\nDemonstrating Unsafe Function for String:" << endl;
+                unsafeFunctionString(unsafeInput);
+            } else if (subChoice == 2) {
+                const string safeInput = "SafeInput";
+                cout << "\nDemonstrating Safe Function for String:" << endl;
+                safeFunctionString(safeInput);
+            } else {
+                cout << "Invalid choice." << endl;
+            }
             break;
         }
         case 3: {
-            int unsafeArray[] = {1, 2, 3, 4, 5, 6};
-            size_t unsafeSize = sizeof(unsafeArray) / sizeof(unsafeArray[0]);
-
-            cout << "\nDemonstrating Unsafe Function for Array:" << endl;
-            unsafeFunctionArray(unsafeArray, unsafeSize);
-
-            int safeArray[] = {1, 2, 3};
-            size_t safeSize = sizeof(safeArray) / sizeof(safeArray[0]);
-
-            cout << "\nDemonstrating Safe Function for Array:" << endl;
-            safeFunctionArray(safeArray, safeSize);
+            cout << "Do you want to run the safe or unsafe function? (1 for unsafe, 2 for safe): ";
+            int subChoice;
+            cin >> subChoice;
+            if (subChoice == 1) {
+                int unsafeArray[] = {1, 2, 3, 4, 5, 6};
+                size_t unsafeSize = sizeof(unsafeArray) / sizeof(unsafeArray[0]);
+                cout << "\nDemonstrating Unsafe Function for Array:" << endl;
+                unsafeFunctionArray(unsafeArray, unsafeSize);
+            } else if (subChoice == 2) {
+                int safeArray[] = {1, 2, 3};
+                size_t safeSize = sizeof(safeArray) / sizeof(safeArray[0]);
+                cout << "\nDemonstrating Safe Function for Array:" << endl;
+                safeFunctionArray(safeArray, safeSize);
+            } else {
+                cout << "Invalid choice." << endl;
+            }
             break;
         }
         default:
